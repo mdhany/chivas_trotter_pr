@@ -1,0 +1,14 @@
+<p>
+  <strong>Nombre:</strong>
+  <%= @gift.name %>
+</p>
+
+<p>
+  <strong>Disponibles Actualmente:</strong>
+  <%= @gift.inventory %>
+</p>
+
+
+
+<%= link_to 'Editar', edit_gift_path(@gift) %> |
+<%= link_to 'Volver atras', gifts_path %>

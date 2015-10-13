@@ -1,0 +1,45 @@
+<h1>Consumidores</h1>
+
+<div class="portlet box green">
+  <div class="portlet-title">
+    <div class="caption">Total de consumidores: <%= @customers.count %></div>
+    <div class="tools">
+      <a class="collapse" href="javascript:;"></a>
+      <a class="config" data-toggle="modal" href="#portlet-config"></a>
+      <a class="reload" href="javascript:;"></a>
+      <a class="remove" href="javascript:;"></a>
+    </div>
+  </div>
+  <div class="portlet-body">
+    <div class="table-responsive">
+      <table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Consumidor</th>
+      <th>Identificacion</th>
+      <th>Nacimiento</th>
+      <th>Email</th>
+      <th>Telefono</th>
+      <th>Facturas</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= customer.name %></td>
+        <td><%= customer.identification %></td>
+        <td><%= customer.birth %></td>
+        <td><%= customer.email %></td>
+        <td><%= customer.mobile %></td>
+        <td><small><%= customer.invoices.count %></small></td>
+        <td><%= link_to 'Ver', customer %></td>
+        <td><%= link_to 'Eliminar', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+      </table>
+    </div>
+  </div>
+</div>

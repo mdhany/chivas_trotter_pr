@@ -1,0 +1,40 @@
+<h1>Regalos <%= link_to "Crear Regalo", new_gift_path, class: 'btn btn-lg blue' %></h1>
+
+
+<div class="portlet box green">
+  <div class="portlet-title">
+    <div class="caption">Tipos de regalos: <%= @gifts.count %> </div>
+    <div class="tools">
+      <a class="collapse" href="javascript:;"></a>
+      <a class="config" data-toggle="modal" href="#portlet-config"></a>
+      <a class="reload" href="javascript:;"></a>
+      <a class="remove" href="javascript:;"></a>
+    </div>
+  </div>
+  <div class="portlet-body">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Inventario</th>
+          <th>Creación</th>
+          <th colspan="3"></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <% @gifts.each do |i| %>
+            <tr>
+              <td><%= i.name %></td>
+              <td><%= i.inventory %></td>
+              <td><%= i.created_at %></td>
+              <td><%= link_to 'Editar', edit_gift_path(i)  %></td>
+              <td><%= link_to 'Eliminar', i, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
