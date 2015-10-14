@@ -31,6 +31,8 @@
 // require jquery.validate
 //= require_self
 
+var $= jQuery.noConflict();
+
 $(document).ready(function () {
     $('#consumidor').isHappy({
         fields: {

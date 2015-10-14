@@ -160,9 +160,11 @@
     var thisHash = window.location.hash;
     $(document).ready(function() {
     if(window.location.hash) {
-    $(thisHash).fancybox().trigger('click');
+        $("#inline").fancybox();
+        $(thisHash).fancybox().trigger('click');
+        //alert('YA estas participando')
     }
-    $("#inline").fancybox();
+
     }); // ready
 
 <% end -%>
