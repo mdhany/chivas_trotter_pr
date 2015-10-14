@@ -102,14 +102,20 @@
   </section>
 </div>
 
-<div id="inline" style="display:none; text-align:center;">
-  <br/>
-  <h1>¡FELICIDADES!</h1>
-  <h2>TU REGISTRO SE HA COMPLETADO EXITOSAMENTE</h2>
-  <p>Entérate si eres un ganador en nuestra página de facebook</p>
-  <p>
-  <a href="https://www.facebook.com/ChivasDominicana/" target="_blank" class="btn btn-dark btn-lg"><i class="fa fa-fb fa-fw"></i> <span class="network-name">facebook.com/ChivasDominicana</span></a>
-  </p>
+<div class="messageend" style="display: none;">
+    <div id="blackgb"></div>
+    <div id="inline" style=" text-align:center;">
+      <a class="btn btn-circle page-scroll" id="closediv">
+        <i class="icon icon-remove animated"></i>
+      </a>
+      <br/>
+      <h1>¡FELICIDADES!</h1>
+      <h2>TU REGISTRO SE HA COMPLETADO EXITOSAMENTE</h2>
+      <p>Entérate si eres un ganador en nuestra página de facebook</p>
+      <p>
+      <a href="https://www.facebook.com/ChivasDominicana/" target="_blank" class="btn btn-dark btn-lg"><i class="fa fa-fb fa-fw"></i> <span class="network-name">facebook.com/ChivasDominicana</span></a>
+      </p>
+    </div>
 </div>
 
 <!-- TERMINOS Section -->
@@ -159,11 +165,15 @@
 
     var thisHash = window.location.hash;
     jQuery(document).ready(function() {
-    if(window.location.hash) {
-    jQuery(thisHash).fancybox().trigger('click');
-    jQuery("#inline").fancybox();
-    }
-
+        if(window.location.hash) {
+            $(".messageend").show();
+        }
     }); // ready
+
+    $("#closediv").click(function() {
+        $("#inline").hide(),
+        $("#blackgb").hide(),
+        $(this).hide();
+    });
 
 <% end -%>

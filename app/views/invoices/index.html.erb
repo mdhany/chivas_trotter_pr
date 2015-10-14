@@ -28,7 +28,7 @@
         <% @invoices.each do |i| %>
             <tr>
               <td><%= i.number %></td>
-              <td><%= link_to  i.picture.url, class: 'fancybox'  do %>
+              <td><%= link_to  i.picture.url, target: '_blank', class: 'fancybox'  do %>
                     <i class="icon-picture"></i><small> Ver factura</small>
                 <% end %></td>
               <td><%= link_to i.customer.name, customer_path(i.customer_id) %></td>
