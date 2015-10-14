@@ -158,10 +158,10 @@
 <%= javascript_tag do -%>
 
     var thisHash = window.location.hash;
-    $(document).ready(function() {
+    jQuery(document).ready(function() {
     if(window.location.hash) {
-        $(thisHash).fancybox().trigger('click');
-        $("#inline").fancybox();
+    jQuery(thisHash).fancybox().trigger('click');
+    jQuery("#inline").fancybox();
     }
 
     }); // ready
