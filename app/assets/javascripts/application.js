@@ -25,7 +25,7 @@
 //= require list
 //= require grayscale
 //= require jquery.easing.min
-//= require jquery.fancybox
+// require jquery.fancybox
 //= require happy
 //= require happy.methods
 // require jquery.validate
