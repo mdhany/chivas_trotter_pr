@@ -25,13 +25,12 @@
 //= require list
 //= require grayscale
 //= require jquery.easing.min
-//= require jquery.fancybox.pack
+//= require jquery.fancybox
 //= require happy
 //= require happy.methods
 // require jquery.validate
 //= require_self
 
-var $= jQuery.noConflict();
 
 $(document).ready(function () {
     $('#consumidor').isHappy({
