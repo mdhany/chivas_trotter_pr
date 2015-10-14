@@ -1,29 +1,35 @@
 class MobileController < ApplicationController
 
   def start
+    @ganadores = Winner.all
 
   end
 
 
   def participate
-    #buscar o crear customer
-    #crear factura
-    #mostrar lightbox con mensaje de listo
+    customer = Customer.find_by email: params[:email]
 
-    customer = Customer.find_or_create_by(identification: params[:identification]) do |c|
-      c.name = params[:name]
-      c.birth = params[:birth]
-      c.mobile = params[:mobile]
-      c.email = params[:email]
-      c.invoices.build([{number: params[:number], picture: params[:picture]}])
+    if customer
+      customer.invoices.create!([{number: params[:number], picture: params[:picture]}])
+    else
+      fecha = (params[:birth]['(3i)'] + '-' + params[:birth]['(2i)'] + '-' + params[:birth]['(1i)']).to_s
+
+      customer = Customer.create(
+          identification: params[:identification],
+          name: params[:name],
+          birth: fecha.to_s,
+          mobile: params[:mobile],
+          email: params[:email]
+      )
+      customer.invoices.create!([{number: params[:number], picture: params[:picture]}])
     end
 
     respond_to do |format|
-      if customer
-        format.html { redirect_to action: :start, anchor: 'inline'}
-        format.js
+      if customer.name
+          format.html { redirect_to action: :start, anchor: 'inline'}
+          format.js
+        end
       end
-    end
 
   end
 

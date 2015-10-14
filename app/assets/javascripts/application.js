@@ -26,6 +26,49 @@
 //= require grayscale
 //= require jquery.easing.min
 //= require jquery.fancybox.pack
+//= require happy
+//= require happy.methods
+// require jquery.validate
 //= require_self
 
-
+$(document).ready(function () {
+    $('#consumidor').isHappy({
+        fields: {
+            // reference the field you're talking about, probably by `id`
+            // but you could certainly do $('[name=name]') as well.
+            '#name': {
+                required: true,
+                message: 'Inserta tu nombre'
+            },
+            '#identification': {
+                required: true,
+                message: 'Inserta tu identificación, cedula o pasaporte'
+            },
+            '#birth__3i': {
+                required: true,
+                message: 'Inserta tu dia de nacimiento'
+            },
+            '#birth__2i': {
+                required: true,
+                message: 'Inserta tu mes de nacimiento'
+            },
+            '#birth__1i': {
+                required: true,
+                message: 'Inserta tu año de nacimiento'
+            },
+            '#email': {
+                required: true,
+                message: 'Inserta un email valido.',
+                test: happy.email // this can be *any* function that returns true or false
+            },
+            '#picture': {
+                required: true,
+                message: 'Inserta una imagen de tu factura.'
+            },
+            '#number': {
+                required: true,
+                message: 'Inserta la numeracion de tu factura'
+            }
+        }
+    });
+});

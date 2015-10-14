@@ -1,9 +1,10 @@
+
 <!-- Intro Header -->
 <header class="intro">
   <div class="intro-body">
     <div class="container">
       <div class="row">
-        <div class="col-md-6 col-md-offset-6">
+        <div class="col-md-6 col-sm-offset-6">
           <h1 class="brand-heading">
             <%= image_tag "logo-global.png", class: 'img-responsive' %></h1>
           <p class="intro-text">Registra  aquí tu compra de Chivas Globe-Trotter <br />
@@ -33,13 +34,13 @@
       <div class="col-md-12">
         <h2 class="text-hide">¡Participar es fácil!<%= image_tag "tl-pasos.png", class: 'img-responsive' %></h2>
         <div class="row">
-          <div class="col-lg-4">
+          <div class="col-md-4">
             <%= image_tag "step1.png", class: 'img-responsive' %>
           </div>
-          <div class="col-lg-4">
+          <div class="col-md-4">
             <%= image_tag "step2.png", class: 'img-responsive' %>
           </div>
-          <div class="col-lg-4">
+          <div class="col-md-4">
             <%= image_tag "step3.png", class: 'img-responsive' %>
           </div>
         </div>
@@ -54,24 +55,24 @@
   <section id="download" class="content-section text-center">
     <div class="download-section">
       <div class="container">
-        <div class="col-md-6 col-lg-offset-3">
+        <div class="col-md-6 col-md-offset-3">
           <h1>REGISTRO</h1>
+
           <div class="formulario">
-            <%= form_tag({action: :participate}, multipart: true, remote: true) do %>
-              <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+            <%= form_tag({action: :participate}, multipart: true, id: "consumidor") do %>
               <div class="form-group">
                 <%= text_field_tag :name, nil, class: 'form-control', placeholder: 'Nombre Completo', required: 'required' %>
               </div>
               <div class="form-group">
                 <div class="form-group">
-                  <%= number_field_tag :identification, nil, class: 'form-control', placeholder: "CEDULA", required: 'required' %>
+                  <%= text_field_tag :identification, nil, class: 'form-control', placeholder: "CEDULA o Pasaporte", required: 'required' %>
                 </div>
-                <%= date_field_tag :birth, nil, class: 'form-control', placeholder: "Fecha de nacimiento: DD/MM/AAAA", required: 'required' %>
+                <%#= date_field_tag :birth, nil, class: 'form-control', placeholder: "Fecha de nacimiento DD/MM/AAAA", required: 'required' %>
 
-                <%#= date_select :birth, nil, prompt: { day: 'Día', month: 'Mes', year: 'Año' }, use_month_numbers: true, order: [:day, :month, :year], start_year: 1930, end_year: 1999, class: 'form-control', required: 'required' %>
+                <%= date_select :birth, nil, prompt: { day: 'Día', month: 'Mes', year: 'Año' }, use_month_numbers: true, order: [:day, :month, :year], start_year: 1930, end_year: 1999, class: 'form-control', required: 'required' %>
               </div>
               <div class="form-group">
-                <%= text_field_tag :mobile, nil, class: 'form-control', placeholder: "Telefono", required: 'required' %>
+                <%= number_field_tag :mobile, nil, class: 'form-control', placeholder: "Telefono", required: 'required' %>
               </div>
               <div class="form-group">
                 <%= email_field_tag :email, nil, class: 'form-control', placeholder: "Email", required: 'required' %>
@@ -79,7 +80,7 @@
                 <br />
                 <h2>FACTURA</h2>
                 <div class="form-group">
-                  <%= number_field_tag :number, nil, class: 'form-control', placeholder: "Número de Factura", required: 'required' %>
+                  <%= text_field_tag :number, nil, class: 'form-control', placeholder: "Número de Factura", required: 'required' %>
                 </div>
                 <br />
                 <h4>Elige una foto de tu factura</h4>
@@ -94,7 +95,7 @@
 
 
           </div>
-
+</div>
         </div>
       </div>
     </div>
@@ -115,7 +116,7 @@
 <div class="terminos">
   <section id="terminos" class="content-section text-center">
     <div class="container">
-      <div class="col-md-6 col-lg-offset-3">
+      <div class="col-md-6 col-md-offset-3">
         <p><%= image_tag "logo-gentlemen.png", class: 'img-responsive' %></p>
 
         <h1>TÉRMINOS Y CONDICIONES</h1>
@@ -138,14 +139,22 @@
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2">
       <h1>GANADORES</h1>
-      <p>VIERNES 2 DE OCTUBRE</p>
-      <p>Ronald Araujo. Céd. 223-4325679-0 / Premio: Artículo promocional</p>
-      <p>Ronald Araujo. Céd. 223-4325679-0 / Premio: Artículo promocional</p>
-      <p>Ronald Araujo. Céd. 223-4325679-0 / Premio: Artículo promocional</p>
+      <ul>
+        <div style="overflow: auto; width: 100%; height: 300px;">
+        <li style="display:none;"><p>VIERNES 2 DE OCTUBRE</p></li>
+        <% @ganadores.each do |g| %>
+
+            <li><b><%= g.customer.name %>.</b> Céd. x<%= g.customer.identification.last(4) %> / Premio: <%= g.gift.name %> / Fecha: <%= g.created_at.to_date %></li>
+        <% end %>
+        </div>
+      </ul>
+
+
 
     </div>
   </div>
 </section>
+
 <%= javascript_tag do -%>
 
     var thisHash = window.location.hash;
@@ -153,8 +162,7 @@
     if(window.location.hash) {
     $(thisHash).fancybox().trigger('click');
     }
-    $('#inline').fancybox();
+    $("#inline").fancybox();
     }); // ready
-
 
 <% end -%>

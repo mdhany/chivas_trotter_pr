@@ -109,7 +109,9 @@ a:focus {
 }
 
 .navbar-custom a {
-  color: #fff;
+  color: #a08c64;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .navbar-custom .nav li a {
@@ -269,7 +271,13 @@ img.img-responsive{ margin: 0 auto;}
 .terminos .overflow p{ line-height: 1.1;}
 
 #contact {color:#a08c64;}
-#contact h1{ font-size: 74px; color:#a08c64;}
+#contact h1{ font-size: 74px; color:#a08c64; margin-bottom: 20px;}
+#contact li p{
+  margin-bottom: 0px;
+  font-size: 28px;}
+#contact li{ border-bottom: 1px solid #a08c64; list-style: none;
+  margin-bottom: 10px;
+  font-size: 20px;}
 
 
 @media(min-width:768px) {
@@ -377,6 +385,8 @@ img.img-responsive{ margin: 0 auto;}
     height: 400px;
     margin-top: 250px;
   }
+
+
 }
 
 .btn {
@@ -426,6 +436,19 @@ ul.banner-social-buttons {
 
   ul.banner-social-buttons li:last-child {
     margin-bottom: 0;
+  }
+
+  .intro {
+
+   //background: url(image-path("bg-1.jpg")) no-repeat bottom center scroll;
+    background: none;
+
+  }
+}
+
+@media(max-width:995px) {
+  .intro .intro-body .intro-text {
+    font-size: 18px;
   }
 }
 
@@ -493,6 +516,7 @@ input[type="file"]{
   background: none;
   display:inline-block;
 }
+
 
 .form-group {
   margin-bottom: 5px;

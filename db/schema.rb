@@ -11,16 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151012070001) do
+ActiveRecord::Schema.define(version: 20151014015747) do
 
   create_table "customers", force: true do |t|
     t.string   "name"
     t.date     "birth"
-    t.string   "mobile"
+    t.integer  "mobile",         limit: 8
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "identification", limit: 8
+    t.string   "identification"
   end
 
   add_index "customers", ["email"], name: "index_customers_on_email", unique: true, using: :btree
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20151012070001) do
   end
 
   create_table "invoices", force: true do |t|
-    t.integer  "number"
+    t.string   "number"
     t.string   "picture"
     t.integer  "customer_id"
     t.boolean  "winner?",     default: false

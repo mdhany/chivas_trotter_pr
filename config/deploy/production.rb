@@ -30,8 +30,8 @@ set :deploy_to, '/home/deploy/chivas_trotter'
 #    auth_methods: %w(password)
 #  }
 # and/or per server
-# server 'example.com',
-#   user: 'user_name',
+# server '104.236.71.38',
+#   user: 'deploy',
 #   roles: %w{web app},
 #   ssh_options: {
 #     user: 'user_name', # overrides user setting above
