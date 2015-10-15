@@ -24,20 +24,15 @@
 //= require list
 //= require grayscale
 //= require jquery.easing.min
-// require jquery.fancybox
+//= require jquery.fancybox
 //= require happy
 //= require happy.methods
-//= require jquery.h5validate
 //= require turbolinks
 // require jquery.validate
 //= require_self
 
 
 $(document).ready(function () {
-
-    $('#consumidor').h5Validate();
-
-
     $('#consumidor').isHappy({
         fields: {
             // reference the field you're talking about, probably by `id`
@@ -48,19 +43,23 @@ $(document).ready(function () {
             },
             '#identification': {
                 required: true,
-                message: 'Inserta tu identificación, cedula o pasaporte'
+                message: 'Inserta tu cedula o pasaporte'
             },
             '#birth__3i': {
                 required: true,
-                message: 'Inserta tu dia de nacimiento'
+                message: 'Favor seleccionar dia'
             },
             '#birth__2i': {
                 required: true,
-                message: 'Inserta tu mes de nacimiento'
+                message: 'Favor seleccionar mes'
             },
             '#birth__1i': {
                 required: true,
-                message: 'Inserta tu año de nacimiento'
+                message: 'Favor seleccionar año'
+            },
+            '#mobile': {
+                required: true,
+                message: 'Inserta solo numeros'
             },
             '#email': {
                 required: true,
@@ -69,11 +68,15 @@ $(document).ready(function () {
             },
             '#picture': {
                 required: true,
-                message: 'Inserta una imagen de tu factura.'
+                message: 'Selecciona tu factura'
             },
             '#number': {
                 required: true,
                 message: 'Inserta la numeracion de tu factura'
+            },
+            '#acepto': {
+                required: true,
+                message: 'Debes aceptar los términos y condiciones'
             }
         }
     });

@@ -87,7 +87,7 @@
                 <h4>Elige una foto de tu factura</h4>
                 <div class="form-group">
                   <%= file_field_tag :picture, capture: "camera", accept: "image/*", class: 'form-chivas', required: 'required' %>
-                  <div class="form-group term"><input type="checkbox" required > <a class="page-scroll" href="#terminos">Acepto los Términos y Condiciones</a></div>
+                  <div class="form-group term"><input type="checkbox" id="acepto" required > <a class="page-scroll" href="#terminos">Acepto los Términos y Condiciones</a></div>
                 </div>
                 <div class="enviar">
                   <%= submit_tag "ENVIAR DATOS", class: 'page-scroll btn btn-default btn-lg btnsend' %>
