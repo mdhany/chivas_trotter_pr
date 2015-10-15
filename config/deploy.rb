@@ -4,7 +4,7 @@ set :application, 'chivas_trotter'
 set :repo_url, 'git@github.com:mdhany/chivas_trotter.git'
 #set :deploy_to, '/home/deploy/cn'
 set :linked_files, %w{config/database.yml}
-set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 # Default deploy_to directory is /var/www/my_app
