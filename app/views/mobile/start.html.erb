@@ -87,7 +87,7 @@
                 <h4>Elige una foto de tu factura</h4>
                 <div class="form-group">
                   <%= file_field_tag :picture, capture: "camera", accept: "image/*", class: 'form-chivas', required: 'required' %>
-                  <div class="form-group term"><input type="checkbox" id="acepto" required > <a class="page-scroll" href="#terminos">Acepto los Términos y Condiciones</a></div>
+                  <div class="form-group term"><%= check_box_tag :acepto, 1, false, required: 'required' %> <a class="page-scroll" href="#terminos">Acepto los Términos y Condiciones</a></div>
                 </div>
                 <div class="enviar">
                   <%= submit_tag "ENVIAR DATOS", class: 'page-scroll btn btn-default btn-lg btnsend' %>
@@ -114,8 +114,7 @@
       <h2>TU REGISTRO SE HA COMPLETADO EXITOSAMENTE</h2>
       <p>Entérate si eres un ganador en nuestra página de facebook</p>
       <p>
-      <div class="fb-like"></div>
-      <a href="https://www.facebook.com/ChivasDominicana/" target="_blank" class="btn btn-dark btn-lg"><i class="fa fa-fb fa-fw"></i> <span class="network-name">facebook.com/ChivasDominicana</span></a>
+      <div class="fb-follow" data-href="https://www.facebook.com/ChivasDominicana/" data-width="300" data-height="200" data-layout="standard" data-show-faces="true"></div>
       </p>
     </div>
 </div>
