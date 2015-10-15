@@ -149,9 +149,10 @@
       <ul>
         <div style="overflow: auto; width: 100%; height: 300px;">
         <li style="display:none;"><p>VIERNES 2 DE OCTUBRE</p></li>
+         <%= 'Aún no hay ganadores disponibles' if @ganadores.blank? %>
         <% @ganadores.each do |g| %>
 
-            <li><b><%= g.customer.name %>.</b> Céd. x<%= g.customer.identification.last(4) %> / Premio: <%= g.gift.name %> / Fecha: <%= g.created_at.to_date %></li>
+            <li><b><%= g.customer.name unless g.customer.blank? %>.</b> Céd. x<%= g.customer.identification.last(4)  unless g.customer.blank? %> / Premio: <%= g.gift.name unless g.gift.blank? %> / Fecha: <%= g.created_at.to_date %></li>
         <% end %>
         </div>
       </ul>

@@ -27,9 +27,9 @@
         <tbody>
         <% @winners.each do |i| %>
             <tr>
-              <td><%= link_to i.invoice.customer.name, customer_path(i.invoice.customer) %></td>
-              <td><%= link_to i.invoice.number, invoice_path(i.invoice_id) %></td>
-              <td><%= i.gift.name %></td>
+              <td><%= link_to i.invoice.customer.name, customer_path(i.invoice.customer) unless i.invoice.blank? %></td>
+              <td><%= link_to i.invoice.number, invoice_path(i.invoice_id) unless i.invoice.blank? %></td>
+              <td><%= i.gift.name unless i.gift.blank? %></td>
               <td><%= i.created_at %></td>
               <td><%#= link_to 'Editar', edit_gift_path(i)  %></td>
               <td><%= link_to 'Eliminar', i, method: :delete, data: { confirm: 'Are you sure?' } %></td>
