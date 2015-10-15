@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require jquery-migrate-1.2.1.min
 //= require jquery-ui-1.10.3.custom.min
 //= require bootstrap/js/bootstrap.min
@@ -28,11 +27,17 @@
 // require jquery.fancybox
 //= require happy
 //= require happy.methods
+//= require jquery.h5validate
+//= require turbolinks
 // require jquery.validate
 //= require_self
 
 
 $(document).ready(function () {
+
+    $('#consumidor').h5Validate();
+
+
     $('#consumidor').isHappy({
         fields: {
             // reference the field you're talking about, probably by `id`

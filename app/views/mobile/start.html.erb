@@ -68,7 +68,8 @@
                   <%= text_field_tag :identification, nil, class: 'form-control', placeholder: "CEDULA o Pasaporte", required: 'required' %>
                 </div>
                 <%#= date_field_tag :birth, nil, class: 'form-control', placeholder: "Fecha de nacimiento DD/MM/AAAA", required: 'required' %>
-
+                <%= label_tag :birth, "Fecha de Nacimiento" %>
+                <br/>
                 <%= date_select :birth, nil, prompt: { day: 'Día', month: 'Mes', year: 'Año' }, use_month_numbers: true, order: [:day, :month, :year], start_year: 1930, end_year: 1999, class: 'form-control', required: 'required' %>
               </div>
               <div class="form-group">
@@ -105,7 +106,7 @@
 <div class="messageend" style="display: none;">
     <div id="blackgb"></div>
     <div id="inline" style=" text-align:center;">
-      <a class="btn btn-circle page-scroll" id="closediv">
+      <a class="btn btn-circle page-scroll" id="closediv" href="#contact">
         <i class="icon icon-remove animated"></i>
       </a>
       <br/>
