@@ -28,58 +28,59 @@
 //= require happy
 //= require happy.methods
 //= require turbolinks
-// require jquery.validate
+//= require jquery.validate
 //= require_self
 
 
 $(document).ready(function () {
-    $('#consumidor').isHappy({
-        fields: {
-            // reference the field you're talking about, probably by `id`
-            // but you could certainly do $('[name=name]') as well.
-            '#name': {
-                required: true,
-                message: 'Inserta tu nombre'
+    $("#consumidor").validate({
+        rules: {
+            name: "required",
+            identification: "required",
+            'birth[(3i)]': {
+                required: true
             },
-            '#identification': {
-                required: true,
-                message: 'Inserta tu cedula o pasaporte'
+            'birth[(2i)]': {
+                required: true
             },
-            '#birth__3i': {
-                required: true,
-                message: 'Favor seleccionar dia'
+            'birth[(1i)]': {
+                required: true
             },
-            '#birth__2i': {
+            mobile: {
                 required: true,
-                message: 'Favor seleccionar mes'
+                maxlength: 13
             },
-            '#birth__1i': {
+
+            email: {
                 required: true,
-                message: 'Favor seleccionar año'
+                email: true
             },
-            '#mobile': {
-                required: true,
-                message: 'Inserta solo numeros'
+            number: {
+                required: true
             },
-            '#email': {
-                required: true,
-                message: 'Inserta un email valido.',
-                test: happy.email // this can be *any* function that returns true or false
+            picture: {
+                required: true
             },
-            '#picture': {
-                required: true,
-                message: 'Selecciona tu factura'
+            acepto: "required"
+        },
+        messages: {
+            name: "Este campo es requerido",
+            identification: "Este campo es requerido",
+            'birth[(3i)]': "Seleccione una opción",
+            'birth[(2i)]': "Seleccione una opción",
+            'birth[(1i)]': "Seleccione una opción",
+            email: "Digite un email valido",
+            acepto: "Debe aceptar los Términos y Condiciones",
+            mobile: {
+                required: "Este campo es requerido",
+                maxlength: "Maximo 13 digitos"
             },
-            '#number': {
-                required: true,
-                message: 'Inserta la numeracion de tu factura'
-            },
-            '#acepto': {
-                required: true,
-                message: 'Debes aceptar los términos y condiciones'
-            }
+            number: "Este campo es requerido",
+            picture: "Debe subir foto de factura"
+
         }
     });
+
 });
 
 $ = jQuery.noConflict();
