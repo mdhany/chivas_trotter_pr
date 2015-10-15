@@ -258,16 +258,16 @@ img.img-responsive{ margin: 0 auto;}
   opacity: .6;
 }
 #inline{ 
-  width: 80%; min-height: 300px; position: absolute; top: 10%; left: 10%;
+  width: 85%; min-height: 300px; position: absolute; top: 10%; left: 10%;
   z-index: 1032;
   background: #fff;
   color: #000000;
 }
 #inline h1{
-  font-size: 54px;
+  font-size: 48px;
 }
 
-#inline h2{font-weight: normal; margin-bottom:10px; }
+#inline h2{font-weight: normal; margin-bottom:10px; font-size: 30px; }
 
 #closediv{
   position: relative; top: 4%; left: 45%;
