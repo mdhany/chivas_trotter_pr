@@ -1,5 +1,6 @@
 
 <!-- Intro Header -->
+
 <header class="intro">
   <div class="intro-body">
     <div class="container">
@@ -23,11 +24,14 @@
   </div>
 
 </header>
+
 <div class="copyright">
   <small>El consumo de alcohol perjudica la salud. Ley 42-01. Disfruta Chivas Regal responsablemente. CHIVAS REGAL® 12 Years Old Blended Scotch Whisky. 40% Alc./Vol. (80 Proof). © 2015 Pernod Ricard Dominicana, Santo Domingo, R.D.</small>
 </div>
 
+
 <!-- Mecanica Section -->
+
 <div class="mecanica">
   <section id="about" class="container content-section text-center">
     <div class="row">
@@ -51,11 +55,12 @@
 </div>
 
 <!-- Registrase Section -->
+<div class="row">
 <div class="registrate">
   <section id="download" class="content-section text-center">
     <div class="download-section">
       <div class="container">
-        <div class="col-md-6 col-md-offset-3">
+        <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
           <h1>REGISTRO</h1>
 
           <div class="formulario">
@@ -70,7 +75,7 @@
                 <%#= date_field_tag :birth, nil, class: 'form-control', placeholder: "Fecha de nacimiento DD/MM/AAAA", required: 'required' %>
                 <%= label_tag :birth, "Fecha de Nacimiento" %>
                 <br/>
-                <%= date_select :birth, nil, prompt: { day: 'Día', month: 'Mes', year: 'Año' }, use_month_numbers: true, order: [:day, :month, :year], start_year: 1930, end_year: 1999, class: 'form-control', required: 'required' %>
+                <%= date_select :birth, nil, prompt: { day: 'Día', month: 'Mes', year: 'Año' }, use_month_numbers: true, order: [:day, :month, :year], start_year: 1930, end_year: 1998, class: 'form-control', required: 'required' %>
               </div>
               <div class="form-group">
                 <%= number_field_tag :mobile, nil, class: 'form-control', placeholder: "Telefono", required: 'required' %>
@@ -102,6 +107,7 @@
     </div>
   </section>
 </div>
+</div>
 
 <div class="messageend" style="display: none;">
     <div id="blackgb"></div>
@@ -120,6 +126,7 @@
 </div>
 
 <!-- TERMINOS Section -->
+<div class="row">
 <div class="terminos">
   <section id="terminos" class="content-section text-center">
     <div class="container">
@@ -140,8 +147,9 @@
     </div>
   </section>
 </div>
-
+</div>
 <!-- Contact Section -->
+<div class="row">
 <section id="contact" class="container content-section text-center">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2">
@@ -162,7 +170,7 @@
     </div>
   </div>
 </section>
-
+</div>
 <%= javascript_tag do -%>
 
     var thisHash = window.location.hash;

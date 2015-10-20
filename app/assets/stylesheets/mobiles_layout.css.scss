@@ -466,6 +466,12 @@ ul.banner-social-buttons {
     background: none;
 
   }
+
+}
+
+//PARA MOVILES
+@media(max-width:380px){
+  #contact h1, .registrate h1{ font-size: 44px;}
 }
 
 @media(max-width:995px) {
