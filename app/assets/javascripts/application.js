@@ -27,7 +27,7 @@
 //= require jquery.fancybox
 //= require happy
 //= require happy.methods
-// require turbolinks
+//= require turbolinks
 //= require jquery.validate
 //= require_self
 
