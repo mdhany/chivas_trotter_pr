@@ -7,9 +7,9 @@
 
 set :stage, :production
 
-role :app, %w{deploy@104.236.71.38}
-role :web, %w{deploy@104.236.71.38}
-role :db,  %w{deploy@104.236.71.38}
+role :app, %w{deploy@159.203.87.230}
+role :web, %w{deploy@159.203.87.230}
+role :db,  %w{deploy@159.203.87.230}
 
 # Extended Server Syntax
 # ======================
@@ -17,7 +17,7 @@ role :db,  %w{deploy@104.236.71.38}
 # definition into the server list. The second argument
 # something that quacks like a hash can be used to set
 # extended properties on the server.
-server '104.236.71.38', user: 'deploy', roles: %w{web app}
+server '159.203.87.230', user: 'deploy', roles: %w{web app}
 set :deploy_to, '/home/deploy/chivas_trotter'
 
 # you can set custom ssh options
@@ -30,7 +30,7 @@ set :deploy_to, '/home/deploy/chivas_trotter'
 #    auth_methods: %w(password)
 #  }
 # and/or per server
-# server '104.236.71.38',
+# server '159.203.87.230',
 #   user: 'deploy',
 #   roles: %w{web app},
 #   ssh_options: {
