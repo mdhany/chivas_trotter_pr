@@ -81,6 +81,28 @@ $(document).ready(function () {
         }
     });
 
+    $("#adulto").validate({
+        rules: {
+            'birth[(3i)]': {
+                required: true
+            },
+            'birth[(2i)]': {
+                required: true
+            },
+            'birth[(1i)]': {
+                required: true
+            }
+        },
+        messages: {
+
+            'birth[(3i)]': "Seleccione una opción",
+            'birth[(2i)]': "Seleccione una opción",
+            'birth[(1i)]': "Seleccione una opción"
+
+
+        }
+    });
+
 });
 
 $ = jQuery.noConflict();

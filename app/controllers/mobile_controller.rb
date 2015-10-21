@@ -1,4 +1,26 @@
 class MobileController < ApplicationController
+  before_action :is_adult_logged?, except: [:home, :adult?]
+
+  layout :age_chivas_layout
+
+
+  def home
+
+  end
+
+  def adult?
+    fecha = (params[:birth]['(3i)'] + '-' + params[:birth]['(2i)'] + '-' + params[:birth]['(1i)']).to_date
+
+    if fecha >= 18.years.ago #Menor de edad
+      redirect_to home_path, alert: 'Usted es menor de edad. No puede acceder a este sitio.'
+    else
+      redirect_to start_path
+      session[:is_adult?] = true
+    end
+
+
+
+  end
 
   def start
     @ganadores = Winner.all
@@ -34,12 +56,17 @@ class MobileController < ApplicationController
   end
 
 
-  def upload
-    uploaded_io = params[:picture]
-    File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'wb') do |file|
-      file.write(uploaded_io.read)
+  protected
+  def age_chivas_layout
+    if action_name == 'home'
+      false
     end
-    #"http://#{request.host_with_port}/uploads/#{uploaded_io.original_filename}"
+  end
+
+  def is_adult_logged?
+    unless session[:is_adult?]
+      redirect_to home_path
+    end
   end
 
 end

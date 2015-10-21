@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'home', to: 'mobile#home', as: 'home'
+  post 'adult', to: 'mobile#adult?', as: 'adult'
   get 'start', to: 'mobile#start', as: 'start'
 
   post 'participate', to: 'mobile#participate', as: 'participate'

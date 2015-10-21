@@ -1,0 +1,34 @@
+body.home{
+
+  background-image: url(image-path('avp-background-normal.jpg'));
+  background-color: #000004;
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #a08c64;
+
+  .header{
+    display: block;
+    width: 291px;
+    height: 90px;
+    margin: 30px auto;
+    margin-bottom: 40px;
+  }
+
+  label{
+    font-size: 23px;
+    text-align: center;
+  }
+
+  .formedad{ margin-bottom: 40px;}
+
+  footer{
+    a{
+      padding: 0;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+  }
+
+
+} //.home
