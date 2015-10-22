@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CHIVAS Globe Trotter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
+  <%= stylesheet_link_tag    'application_m', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body class="home">
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-sm-offset-3">
+      <div class="row">
+        <div class="header">
+          <h1 class="text-hide">Chivas
+            <%= image_tag "chivas-logo-en-retina.png", class: 'img-responsive' %></h1>
+        </div>
+        <div class="col-md-12 text-center">
+            <p><b>Bienvenido a Chivas. La madurez forma el carácter. </b><br/>
+              Confirma tu edad antes de ingresar a nuestro sitio.</p>
+        </div>
+
+        <div class="col-md-12 formedad text-center">
+
+          <% if alert %>
+              <div class="alert alert-danger"><button class="close" data-dismiss="alert"></button><%= alert %></div>
+          <% end %>
+
+            <%= form_tag({action: :adult?}, id: "adulto") do %>
+
+                <div class="form-group">
+
+                  <%#= date_field_tag :birth, nil, class: 'form-control', placeholder: "Fecha de nacimiento DD/MM/AAAA", required: 'required' %>
+                  <%= label_tag :birth, "Fecha de Nacimiento" %>
+                  <br/>
+                  <%= date_select :birth, nil, prompt: { day: 'Día', month: 'Mes', year: 'Año' }, use_month_numbers: true, order: [:day, :month, :year], start_year: 1930, end_year: 1999, class: 'form-control', required: 'required' %>
+                </div>
+
+                  <div class="enviar">
+                    <%= submit_tag "ENVIAR DATOS", class: 'page-scroll btn btn-default btn-gray btn-lg btnsend' %>
+                  </div>
+            <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- Footer -->
+<footer>
+  <div class="container text-center">
+
+
+        <div class="col-md-12">
+          <p>Al ingresar a este sitio, aceptas nuestra <a href="http://www.chivas.com/es/do/footer-pages/privacy-policy">Política de privacidad</a>, los <a href="http://www.chivas.com/es/do/footer-pages/terms-and-conditions">Términos y condiciones</a> y la <a href="http://www.chivas.com/es/do/footer-pages/cookie-policy">Política de cookies</a></p>
+          <div class="link-list">
+            <small>En Chivas, tenemos el compromiso de beber con responsabilidad.</small>
+          </div>
+        </div>
+
+    <p>El consumo de alcohol perjudica la salud. Ley 42-01. Disfruta Chivas Regal responsablemente.
+      &copy; Pernod Ricard Dominicana 2015</p>
+  </div>
+</footer>
+</body>
+</html>
