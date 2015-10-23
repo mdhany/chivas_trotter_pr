@@ -1,6 +1,6 @@
 # config valid only for Capistrano 3.1
 lock '3.1.0'
-set :application, 'chivas_trotter'
+set :application, 'chivas_tpr'
 set :repo_url, 'git@github.com:mdhany/chivas_trotter_pr.git'
 #set :deploy_to, '/home/deploy/cn'
 set :linked_files, %w{config/database.yml}
